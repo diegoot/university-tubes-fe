@@ -1,10 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import grey from "@mui/material/colors/grey";
+import Home from "./Home";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    background: {
+      paper: grey[100],
+    },
+  },
+});
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </React.StrictMode>
+);

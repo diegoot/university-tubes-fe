@@ -10,6 +10,7 @@ import grey from "@mui/material/colors/grey";
 // Own imports
 import Home from "./Home";
 import Simulator from "./Simulator";
+import Results from "./Results";
 
 const theme = createTheme({
   palette: {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/simulator",
     element: <Simulator />,
+  },
+  {
+    path: "/results",
+    element: <Results />,
   },
 ]);
 

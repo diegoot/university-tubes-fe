@@ -52,7 +52,12 @@ const Home = () => {
             </Button>
           </Grid>
           <Grid item xs={12} md={6} textAlign="left">
-            <Button variant="contained" sx={{ width: "100%" }}>
+            <Button
+              component={Link}
+              to="/results"
+              variant="contained"
+              sx={{ width: "100%" }}
+            >
               Previous simulations
             </Button>
           </Grid>

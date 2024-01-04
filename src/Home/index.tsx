@@ -1,20 +1,22 @@
-// Icons
+// Material UI imports
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
-// Components
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/system/Box";
 import Typography from "@mui/material/Typography";
-// Colors
 import green from "@mui/material/colors/green";
 import indigo from "@mui/material/colors/indigo";
 import yellow from "@mui/material/colors/yellow";
 import purple from "@mui/material/colors/purple";
+// React router imports
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", pt: "20px" }}>
+    <Box
+      sx={{ display: "flex", justifyContent: "center", pt: "20px", pb: "20px" }}
+    >
       <Paper elevation={3} sx={{ width: "70%", p: "20px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} textAlign="center">
@@ -40,7 +42,12 @@ const Home = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} textAlign="right">
-            <Button variant="contained" sx={{ width: "100%" }}>
+            <Button
+              component={Link}
+              to="/simulator"
+              variant="contained"
+              sx={{ width: "100%" }}
+            >
               New simuilation
             </Button>
           </Grid>
